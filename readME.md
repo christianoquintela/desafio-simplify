@@ -8,8 +8,8 @@
 - [x] Done!!!
 ### Docker 
 - [x] Configurar o doker para rodar localmente
-- [ ] Configurar o Docker-compose
-- [ ] Configurar o Dockerfile.
+- [x] Configurar o Docker-compose
+- [x] Configurar o Dockerfile.
 ### Realizar o crud no banco postgressql, mysql e etc.
 - [x] Mysql Done!!!
 - [ ] Postgresql.

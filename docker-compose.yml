@@ -1,7 +1,7 @@
 #Banco de Dados para deploy
 services:
-  mysql_db:
-    image: mysql:8.4.0-oraclelinux8
+  mydb:
+    image: mysql:5.7
     restart: always
     env_file: ./.env
     environment:
@@ -15,7 +15,7 @@ services:
       - db_data:/var/lib/mysql
   app:
     depends_on:
-      - mysql_db
+      - mydb
     build:
       context: ./
       dockerfile: Dockerfile
@@ -26,7 +26,7 @@ services:
     ports:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_db:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mydb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=$MYSQLDB_USER
       - SPRING_DATASOURCE_PASSWORD=$MYSQLDB_ROOT_PASSWORD
     volumes:
