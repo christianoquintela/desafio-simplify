@@ -5,7 +5,7 @@
 # Desafio de adaptar o Crud do Elias3dMaker + Authenticação + Authorização e outras techs do springboot
 
 ### Realizar a configuração do github...
-- [ ] Done!!!
+- [x] Done!!!
 ### Docker 
 - [x] Configurar o doker para rodar localmente
 - [ ] Configurar o Docker-compose
